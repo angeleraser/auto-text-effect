@@ -1,0 +1,117 @@
+@import url("./sanitize.css");
+
+:root {
+  --salmon: darksalmon;
+  --black: #111;
+  --white: #fff;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 360px;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--salmon);
+  color: var(--black);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.form button {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  outline: none;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.textarea {
+  resize: none;
+  width: 100%;
+  min-height: 140px;
+  color: var(--black);
+  background-color: var(--white);
+  outline: none;
+  font-size: 18px;
+}
+
+.text {
+  font-size: 28px;
+  width: 100%;
+  text-align: center;
+  max-width: 480px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.text::after {
+  display: inline-block;
+  content: "✍️";
+  font-size: 48px;
+  animation: writing-hand infinite;
+  animation-duration: inherit;
+}
+
+@keyframes writing-hand {
+  0% {
+    transform: translateY(-25%) translateX(-25%);
+  }
+
+  25% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(-25%) translateX(-25%);
+  }
+
+  75% {
+    transform: translateY(0) translateX(0);
+  }
+
+  100% {
+    transform: translateY(-25%) translateX(-25%);
+  }
+}
+
+.text:empty::after {
+  color: var(--white);
+  display: inline-block;
+  content: "Your text here...";
+  opacity: 0.5;
+}
+
+.speed-selector {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: var(--black);
+  gap: 16px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.speed-selector,
+.speed-selector select,
+.textarea,
+.form button {
+  padding: 7px 14px;
+  border-radius: 4px;
+}
+
+.speed-selector select {
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+}
